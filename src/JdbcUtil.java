@@ -15,12 +15,8 @@ public class JdbcUtil {
 		try (InputStream is = ClassLoader.getSystemResourceAsStream(proptiesPath)) {
 			Properties props = new Properties();
 			props.load(is);
-			// System.out.println(props);
 			
 			String url = props.getProperty("url");
-			// String user = props.getProperty("user");
-			// String password = props.getProperty("password");
-			// System.out.printf("user = %s, passwod = %s, url = %s%n", user, password, url);
 			
 			// conn = DriverManager.getConnection(url, user, password);
 			conn = DriverManager.getConnection(url, props);
